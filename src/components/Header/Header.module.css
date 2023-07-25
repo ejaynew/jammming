@@ -1,0 +1,39 @@
+.header {
+    background-color: lavenderblush;
+}
+
+.h1 {
+    color: purple;
+    padding: 10px;
+    margin: 5px;
+    font-weight: 800;
+    width: 95%;
+    display: inline-block;
+}
+
+.btn {
+    width: 5%;
+    display: inline-block;
+    justify-content: center;
+    border-radius: 100%;
+}
+
+.closeBtn{
+    float: right;
+}
+
+.info {
+    width: 50%;
+    display: block;
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+    z-index: 1;
+    background-color: whitesmoke;
+    padding: 5px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    margin-top: 30px;
+}

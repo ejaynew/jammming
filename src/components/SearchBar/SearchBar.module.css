@@ -1,3 +1,18 @@
+.form {
+  height: 45em;
+  align-items: center;
+  margin-top: auto;
+  margin-bottom: auto;
+  display: flex;
+  justify-content: center;
+  /* Photo by <a href="https://unsplash.com/fr/@rocinante_11?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Mick Haupt</a> on <a href="https://unsplash.com/photos/CbNBjnXXhNg?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a> */
+  background-image: url("https://images.unsplash.com/photo-1582751836565-74f64cc184cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80");
+}
+
 .input {
-    min-height: 30px;
+    font-size: xx-large;
+}
+
+.submit {
+    font-size: xx-large;
 }

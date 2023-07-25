@@ -1,0 +1,6 @@
+.container {
+    background-color: plum;
+    width: 50%;
+    min-height: 600px;
+    float: left;
+}
