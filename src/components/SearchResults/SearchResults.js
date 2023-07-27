@@ -5,7 +5,7 @@ import styles from "./SearchResults.module.css";
 const SearchResults = (props) => {
   return (
     <div className={styles.container}>
-      <h3>Search Results</h3>
+      <h2>Search Results</h2>
       <TrackList
         tracks={props.searchResults}
         onAdd={props.onAdd}

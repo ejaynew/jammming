@@ -1,39 +1,58 @@
 .header {
     background-color: lavenderblush;
+    min-height: 70px;
 }
 
 .h1 {
     color: purple;
-    padding: 10px;
-    margin: 5px;
+    margin: 0;
     font-weight: 800;
-    width: 95%;
-    display: inline-block;
+    width: 100%;
+    display: inline table-cell;
+    text-align: center;
+    justify-content: center;
 }
 
-.btn {
-    width: 5%;
-    display: inline-block;
-    justify-content: center;
-    border-radius: 100%;
+.p {
+    color: purple;
+    display: inline;
+    border: 1px purple solid;
+    padding: 5px;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-weight: 700;
 }
 
 .closeBtn{
     float: right;
+    justify-content: right;
 }
 
 .info {
-    width: 50%;
+    width: 60%;
     display: block;
     align-content: center;
     justify-content: center;
     text-align: center;
     z-index: 1;
     background-color: whitesmoke;
-    padding: 5px;
+    padding: 2px;
     position: absolute;
     left: 0;
     right: 0;
     margin: auto;
     margin-top: 30px;
+}
+
+.infoBtn {
+    margin: 5px;
+    display: inline;
+    padding: 5px;
+    position: absolute;
+    right: 10px;
+    top: 20px;
+    width: 5%;
+    background-color: lavender;
+    font-weight: 700;
 }

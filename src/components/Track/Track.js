@@ -28,11 +28,11 @@ function Track(props) {
   return (
     <div>
       <div className={styles.card}>
-        <div className="container" id={props.id}>
+        <div className="container">
           <h4>
-            {props.songName} <em>by {props.artistName}</em>
+            {props.name} <em>by {props.artist}</em>
           </h4>
-          <h5>{props.albumName}</h5>
+          <h5>{props.album}</h5>
           {renderButton()}
         </div>
       </div>

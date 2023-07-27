@@ -8,10 +8,11 @@ function TrackList(props) {
         <div>
           <Track
             key={track.id}
+            uid={track.uid}
             track={track}
-            songName={track.songName}
-            artistName={track.artistName}
-            albumName={track.albumName}
+            name={track.name}
+            artist={track.artist}
+            album={track.album}
             onAdd={props.onAdd}
             onRemove={props.onRemove}
             isRemoval={props.isRemoval}

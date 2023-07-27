@@ -5,6 +5,7 @@ import SearchResults from "../SearchResults/SearchResults";
 import Playlist from "../Playlist/Playlist";
 import Footer from "../Footer/Footer";
 import Header from "../Header/Header";
+import Spotify from "../../util/Spotify";
 
 function App() {
   const [searchResults, setSearchResults] = useState([]);
@@ -51,8 +52,7 @@ function App() {
     setCurrTracks((prevTracks) => prevTracks.filter((t) => t.id !== track.id));
   }, []);
   const onSearch = useCallback((userInput) => {
-    alert(`Searching for ${userInput}.`);
-    setSearchResults(dummyData);
+    Spotify.search(userInput).then(setSearchResults);
   }, []);
   const saveToSpotify = (e) => {
     e.preventDefault();
