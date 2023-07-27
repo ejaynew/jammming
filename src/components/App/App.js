@@ -12,27 +12,6 @@ function App() {
   const [playlistName, setPlaylistName] = useState("My playlist");
   const [currTracks, setCurrTracks] = useState([]);
 
-  const dummyData = [
-    {
-      songName: "A Pearl",
-      artistName: "Mitski",
-      albumName: "Be the Cowboy",
-      id: "7fd3aMiuwHWKsTdZafjOfZ?si=0fa1d221fb7d45e8",
-    },
-    {
-      songName: "Lonesome Love",
-      artistName: "Mitski",
-      albumName: "Be the Cowboy",
-      id: "3bjPPTMGBp8e36BYJaXDO2?si=941a4fb5568743df",
-    },
-    {
-      songName: "Nobody",
-      artistName: "Mitski",
-      albumName: "Be the Cowboy",
-      id: "2P5yIMu2DNeMXTyOANKS6k?si=7354fcae42954ba2",
-    },
-  ];
-
   const displayInfo = () => {
     const x = document.getElementById("#displayInfo");
     if (x.style.display === "none") {
@@ -65,14 +44,16 @@ function App() {
     <div className="App">
       <Header displayInfo={displayInfo} />
       <SearchBar onSearch={onSearch} />
-      <SearchResults searchResults={searchResults} onAdd={handleAdd} />
-      <Playlist
-        name={playlistName}
-        setPlaylistName={setPlaylistName}
-        onRemove={handleRemove}
-        tracks={currTracks}
-        onSubmit={saveToSpotify}
-      />
+      <div style={{ display: "flex" }}>
+        <SearchResults searchResults={searchResults} onAdd={handleAdd} />
+        <Playlist
+          name={playlistName}
+          setPlaylistName={setPlaylistName}
+          onRemove={handleRemove}
+          tracks={currTracks}
+          onSubmit={saveToSpotify}
+        />
+      </div>
       <Footer />
     </div>
   );

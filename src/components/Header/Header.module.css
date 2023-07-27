@@ -6,11 +6,13 @@
 .h1 {
     color: purple;
     margin: 0;
+    padding-top: 10px;
     font-weight: 800;
     width: 100%;
     display: inline table-cell;
     text-align: center;
     justify-content: center;
+    font-size: xx-large;
 }
 
 .p {
@@ -27,6 +29,12 @@
 .closeBtn{
     float: right;
     justify-content: right;
+    transition: 0.25s ease;
+}
+
+.closeBtn:hover {
+    cursor: pointer;
+    background-color: lightcoral;
 }
 
 .info {
@@ -53,6 +61,10 @@
     right: 10px;
     top: 20px;
     width: 5%;
-    background-color: lavender;
     font-weight: 700;
+    transition: 0.5s ease;
+}
+
+.infoBtn:hover {
+    cursor: pointer;
 }

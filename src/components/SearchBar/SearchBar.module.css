@@ -16,3 +16,7 @@
 .submit {
     font-size: xx-large;
 }
+
+.submit:hover {
+  cursor: pointer;
+}

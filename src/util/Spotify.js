@@ -34,13 +34,13 @@ const Spotify = {
       state = params.state,
       storedState = localStorage.getItem(stateKey);
 
-    console.log(`Access token: ${access_token}.`);
-    console.log(`Expires in: ${expires_in}.`);
-
     if (access_token && (state == null || state !== storedState)) {
       alert("There was an error during the authentication");
     } else if (access_token && expires_in) {
-      window.setTimeout(() => (access_token = null), Number(expires_in));
+      setTimeout(() => {
+        access_token = null;
+        window.history.replaceState({}, document.title, "/");
+      }, expires_in * 1000);
       return access_token;
     } else {
       var state = Spotify.generateRandomString(16);
@@ -61,7 +61,7 @@ const Spotify = {
   async search(userInput) {
     const accessToken = Spotify.getAccessToken();
     return fetch(
-      `https://api.spotify.com/v1/search?type=track&q=${userInput}`,
+      `https://api.spotify.com/v1/search?type=track&q=${userInput}&limit=10`,
       {
         headers: {
           Authorization: `Bearer ${accessToken}`,
@@ -81,6 +81,7 @@ const Spotify = {
           artist: track.artists[0].name,
           album: track.album.name,
           uri: track.uri,
+          imageHref: track.album.images[0].url,
         }));
       });
   },

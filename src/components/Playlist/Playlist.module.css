@@ -3,6 +3,8 @@
   width: 50%;
   min-height: 600px;
   float: right;
+  display: table-cell;
+  padding-bottom: 15px;
 }
 
 .input {
@@ -11,5 +13,6 @@
 }
 
 .button {
-  padding: default;
+  padding: 5px;
+  font-size: x-large;
 }

@@ -3,4 +3,7 @@
     width: 50%;
     min-height: 600px;
     float: left;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    display: table-cell;
 }

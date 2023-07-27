@@ -1,9 +1,39 @@
 .card {
-    border: 3px black solid;
-    width: 20em;
-    margin: 10px;
-    padding-bottom: 10px;
-    margin-left: auto;
-    margin-right: auto;
-    background-color: lavenderblush;
+  border: 3px black solid;
+  margin: 10px;
+  background-color: lavenderblush;
+  min-width: 50%;
+  max-width: 85%;
+  margin: 0 auto;
+  float: none;
+  margin-bottom: 10px;
+  display: flex;
+}
+
+.img {
+  max-height: 150px;
+}
+
+.imgContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  margin-left: 0;
+}
+
+.textContainer {
+  display: flex block;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
+  padding: 20px;
+}
+
+.removalBtn {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  margin-right: 10px;
+  font-size: xx-large;
 }

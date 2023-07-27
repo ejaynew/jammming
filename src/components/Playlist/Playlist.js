@@ -7,7 +7,7 @@ function Playlist(props) {
     props.setPlaylistName(e.target.value);
   }, [props.name])
   return (
-    <div className={styles.container}>
+    <div id="Playlist" className={styles.container}>
       <form onSubmit={props.onSubmit}>
         <h1><input className={styles.input} onChange={handleChange} value={props.name} /></h1>
         <TrackList tracks={props.tracks} onRemove={props.onRemove} isRemoval={true} />
