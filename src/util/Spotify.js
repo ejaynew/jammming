@@ -1,5 +1,5 @@
 var client_id = "bf91227dcbb5454eade8977173db1224";
-var redirect_uri = "http://localhost:3000/";
+var redirect_uri = "https://storied-cuchufli-6f6a35.netlify.app/";
 // var redirect_uri = "https://storied-cuchufli-6f6a35.netlify.app/";
 var stateKey = "spotify_auth_state";
 
