@@ -13,7 +13,7 @@ function SearchBar(props) {
       props.onSearch(userInput);
       setUserInput("");
     },
-    [props.onSearch, userInput]
+    [props, userInput]
   );
   return (
     <form onSubmit={handleSubmit} className={styles.form}>

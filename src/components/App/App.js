@@ -32,6 +32,10 @@ function App() {
   }, []);
   const onSearch = useCallback((userInput) => {
     Spotify.search(userInput).then(setSearchResults);
+    const targetElement = document.getElementById('searchResults');
+    if (targetElement) {
+      targetElement.scrollIntoView({ behavior: 'smooth' });
+    }
   }, []);
   const saveToSpotify = (e) => {
     e.preventDefault();

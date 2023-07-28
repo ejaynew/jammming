@@ -1,3 +1,6 @@
+/* // X-Small devices (portrait phones, less than 576px)
+
+// No media query for `xs` since this is the default in Bootstrap */
 .card {
   border: 3px black solid;
   margin: 10px;
@@ -10,30 +13,236 @@
   display: flex;
 }
 
-.img {
-  max-height: 150px;
-}
-
 .imgContainer {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 10px;
-  margin-left: 0;
+  display: none;
 }
 
 .textContainer {
-  display: flex inline-block;
+  display: inline-block;
   margin-left: auto;
   margin-right: auto;
-  justify-content: center;
-  padding: 20px;
 }
 
 .removalBtn {
-  display: flex;
-  align-items: center;
+  display: inline-block;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-right: 2px;
   margin-left: auto;
-  margin-right: 10px;
-  font-size: xx-large;
+  font-size: large;
+}
+
+/* // Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+  .card {
+    border: 3px black solid;
+    margin: 10px;
+    background-color: lavenderblush;
+    min-width: 50%;
+    max-width: 85%;
+    margin: 0 auto;
+    float: none;
+    margin-bottom: 10px;
+    display: flex;
+  }
+
+  .img {
+    max-height: 100px;
+  }
+
+  .imgContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    margin-left: 0;
+  }
+
+  .textContainer {
+    display: flex inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    padding: 20px;
+  }
+
+  .removalBtn {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    margin-right: 10px;
+    font-size: xx-large;
+  }
+}
+
+/* // Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  .card {
+    border: 3px black solid;
+    margin: 10px;
+    background-color: lavenderblush;
+    min-width: 50%;
+    max-width: 85%;
+    margin: 0 auto;
+    float: none;
+    margin-bottom: 10px;
+    display: flex;
+  }
+
+  .img {
+    max-height: 100px;
+  }
+
+  .imgContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    margin-left: 0;
+  }
+
+  .textContainer {
+    display: flex inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    padding: 20px;
+  }
+
+  .removalBtn {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    margin-right: 10px;
+    font-size: xx-large;
+  }
+}
+
+/* // Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  .card {
+    border: 3px black solid;
+    margin: 10px;
+    background-color: lavenderblush;
+    min-width: 50%;
+    max-width: 85%;
+    margin: 0 auto;
+    float: none;
+    margin-bottom: 10px;
+    display: flex;
+  }
+
+  .img {
+    max-height: 150px;
+  }
+
+  .imgContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    margin-left: 0;
+  }
+
+  .textContainer {
+    display: flex inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    padding: 20px;
+  }
+
+  .removalBtn {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    margin-right: 10px;
+    font-size: xx-large;
+  }
+}
+
+/* // X-Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .card {
+    border: 3px black solid;
+    margin: 10px;
+    background-color: lavenderblush;
+    min-width: 50%;
+    max-width: 85%;
+    margin: 0 auto;
+    float: none;
+    margin-bottom: 10px;
+    display: flex;
+  }
+
+  .img {
+    max-height: 150px;
+  }
+
+  .imgContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    margin-left: 0;
+  }
+
+  .textContainer {
+    display: flex inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    padding: 20px;
+  }
+
+  .removalBtn {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    margin-right: 10px;
+    font-size: xx-large;
+  }
+}
+
+/* // XX-Large devices (larger desktops, 1400px and up) */
+@media (min-width: 1400px) {
+  .card {
+    border: 3px black solid;
+    margin: 10px;
+    background-color: lavenderblush;
+    min-width: 50%;
+    max-width: 85%;
+    margin: 0 auto;
+    float: none;
+    margin-bottom: 10px;
+    display: flex;
+  }
+
+  .img {
+    max-height: 150px;
+  }
+
+  .imgContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    margin-left: 0;
+  }
+
+  .textContainer {
+    display: flex inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    padding: 20px;
+  }
+
+  .removalBtn {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    margin-right: 10px;
+    font-size: xx-large;
+  }
 }

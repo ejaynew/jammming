@@ -1,9 +1,11 @@
+/* // X-Small devices (portrait phones, less than 576px)
+// No media query for `xs` since this is the default in Bootstrap */
 .header {
     background-color: lavenderblush;
     min-height: 70px;
-}
+  }
 
-.h1 {
+  .h1 {
     color: purple;
     margin: 0;
     padding-top: 10px;
@@ -13,9 +15,9 @@
     text-align: center;
     justify-content: center;
     font-size: xx-large;
-}
+  }
 
-.p {
+  .p {
     color: purple;
     display: inline;
     border: 1px purple solid;
@@ -24,36 +26,31 @@
     right: 10px;
     top: 10px;
     font-weight: 700;
-}
+  }
 
-.closeBtn{
+  .closeBtn {
     float: right;
     justify-content: right;
     transition: 0.25s ease;
-}
+  }
 
-.closeBtn:hover {
-    cursor: pointer;
-    background-color: lightcoral;
-}
-
-.info {
-    width: 60%;
+  .info {
+    width: 50%;
     display: block;
     align-content: center;
     justify-content: center;
     text-align: center;
     z-index: 1;
     background-color: whitesmoke;
-    padding: 2px;
+    padding: 15px;
     position: absolute;
     left: 0;
     right: 0;
     margin: auto;
     margin-top: 30px;
-}
+  }
 
-.infoBtn {
+  .infoBtn {
     margin: 5px;
     display: inline;
     padding: 5px;
@@ -63,8 +60,378 @@
     width: 5%;
     font-weight: 700;
     transition: 0.5s ease;
+  }
+
+  .infoBtn:hover {
+    cursor: pointer;
+  }
+
+/* // Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+  .header {
+    background-color: lavenderblush;
+    min-height: 70px;
+  }
+
+  .h1 {
+    color: purple;
+    margin: 0;
+    padding-top: 10px;
+    font-weight: 800;
+    width: 100%;
+    display: inline table-cell;
+    text-align: center;
+    justify-content: center;
+    font-size: xx-large;
+  }
+
+  .p {
+    color: purple;
+    display: inline;
+    border: 1px purple solid;
+    padding: 5px;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-weight: 700;
+  }
+
+  .closeBtn {
+    float: right;
+    justify-content: right;
+    transition: 0.25s ease;
+  }
+
+  .closeBtn:hover {
+    cursor: pointer;
+    background-color: lightcoral;
+  }
+
+  .info {
+    width: 50%;
+    display: block;
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+    z-index: 1;
+    background-color: whitesmoke;
+    padding: 15px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    margin-top: 30px;
+  }
+
+  .infoBtn {
+    margin: 5px;
+    display: inline;
+    padding: 5px;
+    position: absolute;
+    right: 10px;
+    top: 20px;
+    width: 5%;
+    font-weight: 700;
+    transition: 0.5s ease;
+  }
+
+  .infoBtn:hover {
+    cursor: pointer;
+  }
 }
 
-.infoBtn:hover {
+/* // Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  .header {
+    background-color: lavenderblush;
+    min-height: 70px;
+  }
+
+  .h1 {
+    color: purple;
+    margin: 0;
+    padding-top: 10px;
+    font-weight: 800;
+    width: 100%;
+    display: inline table-cell;
+    text-align: center;
+    justify-content: center;
+    font-size: xx-large;
+  }
+
+  .p {
+    color: purple;
+    display: inline;
+    border: 1px purple solid;
+    padding: 5px;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-weight: 700;
+  }
+
+  .closeBtn {
+    float: right;
+    justify-content: right;
+    transition: 0.25s ease;
+  }
+
+  .closeBtn:hover {
     cursor: pointer;
+    background-color: lightcoral;
+  }
+
+  .info {
+    width: 50%;
+    display: block;
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+    z-index: 1;
+    background-color: whitesmoke;
+    padding: 15px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    margin-top: 30px;
+  }
+
+  .infoBtn {
+    margin: 5px;
+    display: inline;
+    padding: 5px;
+    position: absolute;
+    right: 10px;
+    top: 20px;
+    width: 5%;
+    font-weight: 700;
+    transition: 0.5s ease;
+  }
+
+  .infoBtn:hover {
+    cursor: pointer;
+  }
+}
+
+/* // Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  .header {
+    background-color: lavenderblush;
+    min-height: 70px;
+  }
+
+  .h1 {
+    color: purple;
+    margin: 0;
+    padding-top: 10px;
+    font-weight: 800;
+    width: 100%;
+    display: inline table-cell;
+    text-align: center;
+    justify-content: center;
+    font-size: xx-large;
+  }
+
+  .p {
+    color: purple;
+    display: inline;
+    border: 1px purple solid;
+    padding: 5px;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-weight: 700;
+  }
+
+  .closeBtn {
+    float: right;
+    justify-content: right;
+    transition: 0.25s ease;
+  }
+
+  .closeBtn:hover {
+    cursor: pointer;
+    background-color: lightcoral;
+  }
+
+  .info {
+    width: 50%;
+    display: block;
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+    z-index: 1;
+    background-color: whitesmoke;
+    padding: 15px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    margin-top: 30px;
+  }
+
+  .infoBtn {
+    margin: 5px;
+    display: inline;
+    padding: 5px;
+    position: absolute;
+    right: 10px;
+    top: 20px;
+    width: 5%;
+    font-weight: 700;
+    transition: 0.5s ease;
+  }
+
+  .infoBtn:hover {
+    cursor: pointer;
+  }
+}
+
+/* // X-Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .header {
+    background-color: lavenderblush;
+    min-height: 70px;
+  }
+
+  .h1 {
+    color: purple;
+    margin: 0;
+    padding-top: 10px;
+    font-weight: 800;
+    width: 100%;
+    display: inline table-cell;
+    text-align: center;
+    justify-content: center;
+    font-size: xx-large;
+  }
+
+  .p {
+    color: purple;
+    display: inline;
+    border: 1px purple solid;
+    padding: 5px;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-weight: 700;
+  }
+
+  .closeBtn {
+    float: right;
+    justify-content: right;
+    transition: 0.25s ease;
+  }
+
+  .closeBtn:hover {
+    cursor: pointer;
+    background-color: lightcoral;
+  }
+
+  .info {
+    width: 50%;
+    display: block;
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+    z-index: 1;
+    background-color: whitesmoke;
+    padding: 15px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    margin-top: 30px;
+  }
+
+  .infoBtn {
+    margin: 5px;
+    display: inline;
+    padding: 5px;
+    position: absolute;
+    right: 10px;
+    top: 20px;
+    width: 5%;
+    font-weight: 700;
+    transition: 0.5s ease;
+  }
+
+  .infoBtn:hover {
+    cursor: pointer;
+  }
+}
+
+/* // XX-Large devices (larger desktops, 1400px and up) */
+@media (min-width: 1400px) {
+  .header {
+    background-color: lavenderblush;
+    min-height: 70px;
+  }
+
+  .h1 {
+    color: purple;
+    margin: 0;
+    padding-top: 10px;
+    font-weight: 800;
+    width: 100%;
+    display: inline table-cell;
+    text-align: center;
+    justify-content: center;
+    font-size: xx-large;
+  }
+
+  .p {
+    color: purple;
+    display: inline;
+    border: 1px purple solid;
+    padding: 5px;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-weight: 700;
+  }
+
+  .closeBtn {
+    float: right;
+    justify-content: right;
+    transition: 0.25s ease;
+  }
+
+  .closeBtn:hover {
+    cursor: pointer;
+    background-color: lightcoral;
+  }
+
+  .info {
+    width: 50%;
+    display: block;
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+    z-index: 1;
+    background-color: whitesmoke;
+    padding: 15px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    margin-top: 30px;
+  }
+
+  .infoBtn {
+    margin: 5px;
+    display: inline;
+    padding: 5px;
+    position: absolute;
+    right: 10px;
+    top: 20px;
+    width: 5%;
+    font-weight: 700;
+    transition: 0.5s ease;
+  }
+
+  .infoBtn:hover {
+    cursor: pointer;
+  }
 }

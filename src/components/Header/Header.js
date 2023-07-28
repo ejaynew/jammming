@@ -1,4 +1,4 @@
-import React, { useCallback } from "react";
+import React from "react";
 import styles from "./Header.module.css";
 
 function Header(props) {
@@ -18,8 +18,8 @@ function Header(props) {
         </button>
         <h2>Welcome to my&nbsp;app!</h2>
         <p>
-          Start by searching for an artist, album, or song title in the search
-          box, after which you will be asked to login with&nbsp;Spotify.
+          Start by searching for a song in the search box, after which you will
+          be asked to login with&nbsp;Spotify.
           <br />
           Next scroll down and you'll see your search results to the left. Click
           on the "+" button to add to your playlist, which you can see on the

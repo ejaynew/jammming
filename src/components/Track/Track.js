@@ -4,11 +4,11 @@ import styles from "./Track.module.css";
 function Track(props) {
   const handleAdd = useCallback(() => {
     props.onAdd(props.track);
-  }, [props.onAdd, props.track]);
+  }, [props]);
 
   const handleRemove = useCallback(() => {
     props.onRemove(props.track);
-  }, [props.onRemove, props.track]);
+  }, [props]);
 
   const renderButton = useCallback(() => {
     if (props.isRemoval) {
@@ -16,7 +16,7 @@ function Track(props) {
     } else {
       return <button onClick={handleAdd} className={styles.removalBtn}>+</button>;
     }
-  }, [props.onRemove, props.onAdd]);
+  }, [props, handleAdd, handleRemove]);
 
   return (
     <div>

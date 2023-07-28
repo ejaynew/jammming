@@ -4,7 +4,7 @@ import styles from "./SearchResults.module.css";
 
 const SearchResults = (props) => {
   return (
-    <div id="SearchResults" className={styles.container}>
+    <div id="searchResults" className={styles.container} >
       <h2>Search Results</h2>
       <TrackList
         tracks={props.searchResults}

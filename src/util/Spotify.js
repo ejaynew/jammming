@@ -1,5 +1,6 @@
 var client_id = "bf91227dcbb5454eade8977173db1224";
-var redirect_uri = "https://storied-cuchufli-6f6a35.netlify.app/";
+var redirect_uri = "http://localhost:3000/";
+// var redirect_uri = "https://storied-cuchufli-6f6a35.netlify.app/";
 var stateKey = "spotify_auth_state";
 
 const Spotify = {
@@ -42,7 +43,7 @@ const Spotify = {
       }, expires_in * 1000);
       return access_token;
     } else {
-      var state = Spotify.generateRandomString(16);
+      state = Spotify.generateRandomString(16);
 
       localStorage.setItem(stateKey, state);
       var scope =
@@ -60,37 +61,43 @@ const Spotify = {
   },
   async search(userInput) {
     const accessToken = Spotify.getAccessToken();
-    return fetch(
-      `https://api.spotify.com/v1/search?type=track&q=${userInput}&limit=10`,
-      {
-        headers: {
-          Authorization: `Bearer ${accessToken}`,
-        },
-      }
-    )
-      .then((response) => {
-        return response.json();
-      })
-      .then((jsonResponse) => {
-        if (!jsonResponse.tracks) {
-          return [];
+    try {
+      return fetch(
+        `https://api.spotify.com/v1/search?type=track&q=${userInput}&limit=10`,
+        {
+          headers: {
+            Authorization: `Bearer ${accessToken}`,
+          },
         }
-        return jsonResponse.tracks.items.map((track) => ({
-          id: track.id,
-          name: track.name,
-          artist: track.artists[0].name,
-          album: track.album.name,
-          uri: track.uri,
-          imageHref: track.album.images[0].url,
-        }));
-      });
+      )
+        .then((response) => {
+          return response.json();
+        })
+        .then((jsonResponse) => {
+          if (!jsonResponse.tracks) {
+            return [];
+          }
+          return jsonResponse.tracks.items.map((track) => ({
+            id: track.id,
+            name: track.name,
+            artist: track.artists[0].name,
+            album: track.album.name,
+            uri: track.uri,
+            imageHref: track.album.images[0].url,
+          }));
+        });
+    } catch {
+      alert(
+        "An error occurred when searching Spotify. Please reload the page to get a new authentication token!"
+      );
+    }
   },
   async onSave(trackUris, playlistName) {
     if (!playlistName) {
-      alert('Please add a playlist name before saving!');
+      alert("Please add a playlist name before saving!");
       return;
     } else if (!trackUris.length) {
-      alert('Please add some tracks to the playlist before saving!');
+      alert("Please add some tracks to the playlist before saving!");
       return;
     }
     let playlistId;
@@ -98,47 +105,54 @@ const Spotify = {
     const headers = {
       Authorization: `Bearer ${accessToken}`,
     };
-
-    return fetch(`https://api.spotify.com/v1/me`, {
-      headers: headers,
-    })
-      .then((response) => {
-        return response.json();
+    try {
+      return fetch(`https://api.spotify.com/v1/me`, {
+        headers: headers,
       })
-      .then((jsonResponse) => {
-        const userId = jsonResponse.id;
-        const defaultDescription = "Created with Jammming!";
-        return fetch(`https://api.spotify.com/v1/users/${userId}/playlists`, {
-          headers: headers,
-          method: "POST",
-          body: JSON.stringify({
-            name: playlistName,
-            description: defaultDescription,
-            public: false,
-          }),
-        });
-      })
-      .then((response) => response.json())
-      .then((jsonResponse) => {
-        playlistId = jsonResponse.id;
-        return fetch(
-          `https://api.spotify.com/v1/playlists/${playlistId}/tracks`,
-          {
+        .then((response) => {
+          return response.json();
+        })
+        .then((jsonResponse) => {
+          const userId = jsonResponse.id;
+          const defaultDescription = "Created with Jammming!";
+          return fetch(`https://api.spotify.com/v1/users/${userId}/playlists`, {
             headers: headers,
             method: "POST",
-            body: JSON.stringify({ uris: trackUris }),
-          }
+            body: JSON.stringify({
+              name: playlistName,
+              description: defaultDescription,
+              public: false,
+            }),
+          });
+        })
+        .then((response) => response.json())
+        .then((jsonResponse) => {
+          playlistId = jsonResponse.id;
+          return fetch(
+            `https://api.spotify.com/v1/playlists/${playlistId}/tracks`,
+            {
+              headers: headers,
+              method: "POST",
+              body: JSON.stringify({ uris: trackUris }),
+            }
+          );
+        })
+        .then(() => {
+          return fetch(`https://api.spotify.com/v1/playlists/${playlistId}`, {
+            headers: headers,
+          });
+        })
+        .then((response) => response.json())
+        .then((jsonResponse) =>
+          alert(
+            `Done! Check it out here: ${jsonResponse.external_urls.spotify}`
+          )
         );
-      })
-      .then(() => {
-        return fetch(`https://api.spotify.com/v1/playlists/${playlistId}`, {
-          headers: headers,
-        });
-      })
-      .then((response) => response.json())
-      .then((jsonResponse) =>
-        alert(`Done! Check it out here: ${jsonResponse.external_urls.spotify}`)
+    } catch {
+      alert(
+        "An error occurred when saving the playlist. Please reload the page to get a new authentication token!"
       );
+    }
   },
 };
 

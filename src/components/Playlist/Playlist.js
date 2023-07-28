@@ -5,7 +5,7 @@ import styles from "./Playlist.module.css";
 function Playlist(props) {
   const handleChange = useCallback((e) => {
     props.setPlaylistName(e.target.value);
-  }, [props.name])
+  }, [props])
   return (
     <div id="Playlist" className={styles.container}>
       <form onSubmit={props.onSubmit}>

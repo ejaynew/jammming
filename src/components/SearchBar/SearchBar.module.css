@@ -1,22 +1,159 @@
+/* // X-Small devices (portrait phones, less than 576px)
+// No media query for `xs` since this is the default in Bootstrap */
 .form {
   height: 45em;
-  align-items: center;
   margin-top: auto;
   margin-bottom: auto;
   display: flex;
   justify-content: center;
+  align-items: flex-end;
   /* Photo by <a href="https://unsplash.com/fr/@rocinante_11?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Mick Haupt</a> on <a href="https://unsplash.com/photos/CbNBjnXXhNg?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a> */
   background-image: url("https://images.unsplash.com/photo-1582751836565-74f64cc184cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80");
 }
 
 .input {
-    font-size: xx-large;
+  font-size: large;
+  margin-bottom: 10%;
 }
 
 .submit {
-    font-size: xx-large;
+  font-size: large;
+  margin-bottom: 10%;
 }
 
 .submit:hover {
   cursor: pointer;
+}
+
+/* // Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+  .form {
+    height: 45em;
+    align-items: flex-end;
+    margin-top: auto;
+    margin-bottom: auto;
+    display: flex;
+    justify-content: center;
+    /* Photo by <a href="https://unsplash.com/fr/@rocinante_11?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Mick Haupt</a> on <a href="https://unsplash.com/photos/CbNBjnXXhNg?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a> */
+    background-image: url("https://images.unsplash.com/photo-1582751836565-74f64cc184cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80");
+  }
+
+  .input {
+    font-size: xx-large;
+  }
+
+  .submit {
+    font-size: xx-large;
+  }
+
+  .submit:hover {
+    cursor: pointer;
+  }
+}
+
+/* // Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  .form {
+    height: 45em;
+    align-items: center;
+    margin-top: auto;
+    margin-bottom: auto;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    /* Photo by <a href="https://unsplash.com/fr/@rocinante_11?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Mick Haupt</a> on <a href="https://unsplash.com/photos/CbNBjnXXhNg?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a> */
+    background-image: url("https://images.unsplash.com/photo-1582751836565-74f64cc184cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80");
+  }
+
+  .input {
+    font-size: xx-large;
+  }
+
+  .submit {
+    font-size: xx-large;
+  }
+
+  .submit:hover {
+    cursor: pointer;
+  }
+}
+
+/* /// Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  .form {
+    height: 35em;
+    align-items: center;
+    margin-top: auto;
+    margin-bottom: auto;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    /* Photo by <a href="https://unsplash.com/fr/@rocinante_11?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Mick Haupt</a> on <a href="https://unsplash.com/photos/CbNBjnXXhNg?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a> */
+    background-image: url("https://images.unsplash.com/photo-1582751836565-74f64cc184cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80");
+  }
+
+  .input {
+    font-size: xx-large;
+  }
+
+  .submit {
+    font-size: xx-large;
+  }
+
+  .submit:hover {
+    cursor: pointer;
+  }
+}
+
+/* // X-Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .form {
+    height: 45em;
+    align-items: center;
+    margin-top: auto;
+    margin-bottom: auto;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    /* Photo by <a href="https://unsplash.com/fr/@rocinante_11?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Mick Haupt</a> on <a href="https://unsplash.com/photos/CbNBjnXXhNg?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a> */
+    background-image: url("https://images.unsplash.com/photo-1582751836565-74f64cc184cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80");
+  }
+
+  .input {
+    font-size: xx-large;
+  }
+
+  .submit {
+    font-size: xx-large;
+  }
+
+  .submit:hover {
+    cursor: pointer;
+  }
+}
+
+/* // XX-Large devices (larger desktops, 1400px and up) */
+@media (min-width: 1400px) {
+  .form {
+    height: 45em;
+    align-items: flex-end;
+    margin-top: auto;
+    margin-bottom: auto;
+    display: flex;
+    justify-content: center;
+    /* Photo by <a href="https://unsplash.com/fr/@rocinante_11?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Mick Haupt</a> on <a href="https://unsplash.com/photos/CbNBjnXXhNg?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a> */
+    background-image: url("https://images.unsplash.com/photo-1582751836565-74f64cc184cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80");
+  }
+
+  .input {
+    font-size: xx-large;
+  }
+
+  .submit {
+    font-size: xx-large;
+  }
+
+  .submit:hover {
+    cursor: pointer;
+  }
 }

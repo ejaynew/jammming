@@ -1,9 +1,9 @@
 .container {
     background-color: plum;
     width: 50%;
-    min-height: 600px;
-    float: left;
-    padding-top: 15px;
-    padding-bottom: 15px;
+    min-height: 80rem;
+    float: right;
     display: table-cell;
+    padding-bottom: 15px;
+    padding-top: 10px;
 }
