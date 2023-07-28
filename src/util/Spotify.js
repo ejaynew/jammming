@@ -1,7 +1,6 @@
 var client_id = "bf91227dcbb5454eade8977173db1224";
 var redirect_uri = "http://localhost:3000/";
 var stateKey = "spotify_auth_state";
-let accessToken;
 
 const Spotify = {
   generateRandomString(length) {
@@ -46,7 +45,8 @@ const Spotify = {
       var state = Spotify.generateRandomString(16);
 
       localStorage.setItem(stateKey, state);
-      var scope = "user-read-private user-read-email";
+      var scope =
+        "user-read-private user-read-email playlist-modify-public playlist-modify-private";
       var url = "https://accounts.spotify.com/authorize";
       url += "?response_type=token";
       url += "&client_id=" + encodeURIComponent(client_id);
@@ -84,6 +84,61 @@ const Spotify = {
           imageHref: track.album.images[0].url,
         }));
       });
+  },
+  async onSave(trackUris, playlistName) {
+    if (!playlistName) {
+      alert('Please add a playlist name before saving!');
+      return;
+    } else if (!trackUris.length) {
+      alert('Please add some tracks to the playlist before saving!');
+      return;
+    }
+    let playlistId;
+    const accessToken = Spotify.getAccessToken();
+    const headers = {
+      Authorization: `Bearer ${accessToken}`,
+    };
+
+    return fetch(`https://api.spotify.com/v1/me`, {
+      headers: headers,
+    })
+      .then((response) => {
+        return response.json();
+      })
+      .then((jsonResponse) => {
+        const userId = jsonResponse.id;
+        const defaultDescription = "Created with Jammming!";
+        return fetch(`https://api.spotify.com/v1/users/${userId}/playlists`, {
+          headers: headers,
+          method: "POST",
+          body: JSON.stringify({
+            name: playlistName,
+            description: defaultDescription,
+            public: false,
+          }),
+        });
+      })
+      .then((response) => response.json())
+      .then((jsonResponse) => {
+        playlistId = jsonResponse.id;
+        return fetch(
+          `https://api.spotify.com/v1/playlists/${playlistId}/tracks`,
+          {
+            headers: headers,
+            method: "POST",
+            body: JSON.stringify({ uris: trackUris }),
+          }
+        );
+      })
+      .then(() => {
+        return fetch(`https://api.spotify.com/v1/playlists/${playlistId}`, {
+          headers: headers,
+        });
+      })
+      .then((response) => response.json())
+      .then((jsonResponse) =>
+        alert(`Done! Check it out here: ${jsonResponse.external_urls.spotify}`)
+      );
   },
 };
 

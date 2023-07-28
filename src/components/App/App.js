@@ -35,10 +35,8 @@ function App() {
   }, []);
   const saveToSpotify = (e) => {
     e.preventDefault();
-    const trackIds = currTracks.map((t) => t.id);
-    alert(
-      `Saving ${playlistName} to spotify... Playlist ids are: ${trackIds}... Done!`
-    );
+    const trackUris = currTracks.map((t) => t.uri);
+    Spotify.onSave(trackUris, playlistName);
   };
   return (
     <div className="App">

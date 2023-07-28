@@ -23,7 +23,7 @@
 }
 
 .textContainer {
-  display: flex block;
+  display: flex inline-block;
   margin-left: auto;
   margin-right: auto;
   justify-content: center;
