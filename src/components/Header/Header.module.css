@@ -17,15 +17,11 @@
     font-size: xx-large;
   }
 
-  .p {
+  .ol {
     color: purple;
-    display: inline;
-    border: 1px purple solid;
     padding: 5px;
-    position: absolute;
-    right: 10px;
-    top: 10px;
-    font-weight: 700;
+    text-align: left;
+    margin: 25px;
   }
 
   .closeBtn {
@@ -85,15 +81,11 @@
     font-size: xx-large;
   }
 
-  .p {
+  .ol {
     color: purple;
-    display: inline;
-    border: 1px purple solid;
     padding: 5px;
-    position: absolute;
-    right: 10px;
-    top: 10px;
-    font-weight: 700;
+    text-align: left;
+    margin: 25px;
   }
 
   .closeBtn {
@@ -159,15 +151,11 @@
     font-size: xx-large;
   }
 
-  .p {
+  .ol {
     color: purple;
-    display: inline;
-    border: 1px purple solid;
     padding: 5px;
-    position: absolute;
-    right: 10px;
-    top: 10px;
-    font-weight: 700;
+    text-align: left;
+    margin: 25px;
   }
 
   .closeBtn {
@@ -233,15 +221,11 @@
     font-size: xx-large;
   }
 
-  .p {
+  .ol {
     color: purple;
-    display: inline;
-    border: 1px purple solid;
     padding: 5px;
-    position: absolute;
-    right: 10px;
-    top: 10px;
-    font-weight: 700;
+    text-align: left;
+    margin: 25px;
   }
 
   .closeBtn {
@@ -307,15 +291,11 @@
     font-size: xx-large;
   }
 
-  .p {
+  .ol {
     color: purple;
-    display: inline;
-    border: 1px purple solid;
-    padding: 5px;
-    position: absolute;
-    right: 10px;
-    top: 10px;
-    font-weight: 700;
+    text-align: left;
+    margin: 25px;
+    margin: 25px;
   }
 
   .closeBtn {
@@ -381,15 +361,11 @@
     font-size: xx-large;
   }
 
-  .p {
+  .ol {
     color: purple;
-    display: inline;
-    border: 1px purple solid;
     padding: 5px;
-    position: absolute;
-    right: 10px;
-    top: 10px;
-    font-weight: 700;
+    text-align: left;
+    margin: 25px;
   }
 
   .closeBtn {

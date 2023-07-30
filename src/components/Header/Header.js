@@ -16,21 +16,26 @@ function Header(props) {
         <button className={styles.closeBtn} onClick={props.displayInfo}>
           x
         </button>
-        <h2>Welcome to my&nbsp;app!</h2>
-        <p>
-          Start by searching for a song in the search box, after which you will
-          be asked to login with&nbsp;Spotify.
-          <br />
-          Next scroll down and you'll see your search results to the left. Click
-          on the "+" button to add to your playlist, which you can see on the
-          right. You can also change the playlist name on the&nbsp;right.
-          <br />
-          Finally, you can save your playlist to spotify using the "Save to
-          Spotify"&nbsp;button.
-          <br />
-          To see these instructions again, just click on the "i" button in
-          the&nbsp;header.
-        </p>
+        <h2 className={styles.h2}>Welcome!</h2>
+        <ol className={styles.ol}>
+          <li>
+            <strong>Search by song</strong> in the search box&nbsp;below.
+          </li>
+          <li>
+            <strong>Login</strong> with&nbsp;Spotify.
+          </li>
+          <li>
+            <strong>Add songs to your playlist</strong> by click on the "+"
+            button next to each&nbsp;track.
+          </li>
+          <li>
+            <strong>Name your playlist</strong> on the top of the&nbsp;form.
+          </li>
+          <li>
+            <strong>Save your playlist</strong> using the button at the bottom
+            of the&nbsp;form.
+          </li>
+        </ol>
       </div>
     </div>
   );
