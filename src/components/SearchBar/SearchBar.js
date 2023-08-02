@@ -1,26 +1,25 @@
-import React, { useState, useCallback } from "react";
+import React, { useCallback } from "react";
 import styles from "./SearchBar.module.css";
 
 function SearchBar(props) {
-  const [userInput, setUserInput] = useState("");
   const handleChange = useCallback((e) => {
     e.preventDefault();
-    setUserInput(e.target.value);
-  }, []);
+    props.setUserInput(e.target.value);
+  }, [props]);
   const handleSubmit = useCallback(
     (e) => {
       e.preventDefault();
-      props.onSearch(userInput);
-      setUserInput("");
+      props.onSearch(props.userInput);
+      props.setUserInput("");
     },
-    [props, userInput]
+    [props]
   );
   return (
     <form onSubmit={handleSubmit} className={styles.form}>
       <input
         type="text"
         onChange={handleChange}
-        value={userInput}
+        value={props.userInput}
         className={styles.input}
       />
       <button className={styles.submit} type="submit">

@@ -1,5 +1,6 @@
 const client_id = "bf91227dcbb5454eade8977173db1224";
-const redirect_uri = "https://storied-cuchufli-6f6a35.netlify.app/";
+const redirect_uri = "http://localhost:3000/";
+// const redirect_uri = "https://storied-cuchufli-6f6a35.netlify.app/";
 const stateKey = "spotify_auth_state";
 
 const Spotify = {
@@ -25,13 +26,15 @@ const Spotify = {
     }
     return hashParams;
   },
-  async getAccessToken() {
+  async getAccessToken(userInput = "") {
     var params = Spotify.getHashParams();
 
     var access_token = params.access_token,
       expires_in = params.expires_in,
       state = params.state,
       storedState = localStorage.getItem(stateKey);
+
+    localStorage.setItem("previous-search-term", userInput);
 
     if (access_token && (state == null || state !== storedState)) {
       alert("There was an error during the authentication");
@@ -45,6 +48,7 @@ const Spotify = {
       state = Spotify.generateRandomString(16);
 
       localStorage.setItem(stateKey, state);
+      localStorage.setItem("previous-search-term", userInput);
       var scope =
         "user-read-private user-read-email playlist-modify-public playlist-modify-private";
       var url = "https://accounts.spotify.com/authorize";
@@ -56,11 +60,14 @@ const Spotify = {
       url += "&show_dialog=" + encodeURIComponent(true);
 
       window.location = url;
+
+      return 0;
     }
   },
   async search(userInput) {
     try {
-      const accessToken = await Spotify.getAccessToken();
+      const accessToken = await Spotify.getAccessToken(userInput);
+
       const response = await fetch(
         `https://api.spotify.com/v1/search?type=track&q=${userInput}&limit=10`,
         {
@@ -108,30 +115,38 @@ const Spotify = {
       const jsonResponse = await response.json();
       const userId = jsonResponse.id;
       const defaultDescription = "Created with Jammming!";
-      
-      const playlistResponse = await fetch(`https://api.spotify.com/v1/users/${userId}/playlists`, {
-        headers: headers,
-        method: "POST",
-        body: JSON.stringify({
-          name: playlistName,
-          description: defaultDescription,
-          public: false,
-        }),
-      });
+
+      const playlistResponse = await fetch(
+        `https://api.spotify.com/v1/users/${userId}/playlists`,
+        {
+          headers: headers,
+          method: "POST",
+          body: JSON.stringify({
+            name: playlistName,
+            description: defaultDescription,
+            public: false,
+          }),
+        }
+      );
       const playlistJsonResponse = await playlistResponse.json();
       const playlistId = playlistJsonResponse.id;
-      
+
       await fetch(`https://api.spotify.com/v1/playlists/${playlistId}/tracks`, {
         headers: headers,
         method: "POST",
         body: JSON.stringify({ uris: trackUris }),
       });
-      
-      const playlistInfoResponse = await fetch(`https://api.spotify.com/v1/playlists/${playlistId}`, {
-        headers: headers,
-      });
+
+      const playlistInfoResponse = await fetch(
+        `https://api.spotify.com/v1/playlists/${playlistId}`,
+        {
+          headers: headers,
+        }
+      );
       const playlistInfoJsonResponse = await playlistInfoResponse.json();
-      alert(`Done! Check it out here: ${playlistInfoJsonResponse.external_urls.spotify}`);
+      alert(
+        `Done! Check it out here: ${playlistInfoJsonResponse.external_urls.spotify}`
+      );
     } catch {
       alert(
         "An error occurred when saving the playlist. Please reload the page to get a new authentication token!"

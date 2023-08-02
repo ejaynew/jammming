@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from "react";
+import React, { useState, useCallback, useEffect } from "react";
 import "./App.css";
 import SearchBar from "../SearchBar/SearchBar";
 import SearchResults from "../SearchResults/SearchResults";
@@ -8,9 +8,20 @@ import Header from "../Header/Header";
 import Spotify from "../../util/Spotify";
 
 function App() {
+  const [searchTerm, setSearchTerm] = useState("");
   const [searchResults, setSearchResults] = useState([]);
   const [playlistName, setPlaylistName] = useState("My playlist");
   const [currTracks, setCurrTracks] = useState([]);
+
+  useEffect(() => {
+    const storedSearchTerm = localStorage.getItem("previous-search-term");
+    if (storedSearchTerm) {
+      setSearchTerm(storedSearchTerm);
+    }
+    return () => {
+      localStorage.removeItem("previous-search-term");
+    }
+  }, []);
 
   const displayInfo = () => {
     const x = document.getElementById("#displayInfo");
@@ -32,9 +43,9 @@ function App() {
   }, []);
   const onSearch = useCallback((userInput) => {
     Spotify.search(userInput).then(setSearchResults);
-    const targetElement = document.getElementById('searchResults');
+    const targetElement = document.getElementById("searchResults");
     if (targetElement) {
-      targetElement.scrollIntoView({ behavior: 'smooth' });
+      targetElement.scrollIntoView({ behavior: "smooth" });
     }
   }, []);
   const saveToSpotify = (e) => {
@@ -45,7 +56,11 @@ function App() {
   return (
     <div className="App">
       <Header displayInfo={displayInfo} />
-      <SearchBar onSearch={onSearch} />
+      <SearchBar
+        userInput={searchTerm}
+        setUserInput={setSearchTerm}
+        onSearch={onSearch}
+      />
       <div style={{ display: "flex" }}>
         <SearchResults searchResults={searchResults} onAdd={handleAdd} />
         <Playlist
